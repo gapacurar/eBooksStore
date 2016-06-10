@@ -1,0 +1,59 @@
+/*
+Copyright SC Sallis Terra Service SRL
+*/
+/* 
+    Author     : SC Sallis Terra Service SRL
+    Copyright  : SC Sallis Terra Service SRL
+*/
+
+body {
+    background-color: #82bfe9;
+    font-family: "Verdana";
+    font-size: 12px;
+    color: #296d7d;
+}
+
+h3 {
+    color: #296d7d;
+}
+
+.tablewithborder {
+    font-size: 12px;
+    border-style: solid;
+    border-color: #296d7d;
+}
+.tablewithoutborder{
+    font-size: 12px;
+}
+td{
+    text-align: left;
+    vertical-align: top;
+}
+.tdc{
+    align-content: center;
+    vertical-align: middle;
+}
+.citybutton {
+    background-color: white; 
+    border: #296d7d;
+    border-style: solid;
+    color: #296d7d;
+    padding: 12px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 7em;
+}
+.citybutton:hover {
+    background-color: #296d7d; 
+    border: white;
+    border-style: solid;
+    color: white;
+    padding: 12px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 7em;
+}
