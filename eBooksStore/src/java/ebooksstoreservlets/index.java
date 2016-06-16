@@ -29,7 +29,7 @@ public class index extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        /*try (PrintWriter out = response.getWriter()) {
+        try (PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -53,9 +53,9 @@ public class index extends HttpServlet {
             out.println("</form>");
             out.println("</body>");
             out.println("</html>");
-        */
             
-            //
+            // this code is used to analyse push of buttons in index servlet
+
             if (request.getParameter("mainpage_newebook") != null) {
                 request.getRequestDispatcher("./RecordNewEBook.jsp").forward(request, response);
             } else if (request.getParameter("mainpage_updateebook") != null) {
@@ -66,8 +66,9 @@ public class index extends HttpServlet {
                 request.getRequestDispatcher("./DisplayAllEbooks.jsp").forward(request, response);
             } else if(request.getParameter("mainpage_displayebooks") != null){
                 this.destroy();
-            }
-        //}//try
+            } 
+
+        }//try
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -106,7 +107,7 @@ public class index extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "This is indez servlet of eBookStore application";
+        return "This is index servlet of eBookStore application";
     }// </editor-fold>
 
 }

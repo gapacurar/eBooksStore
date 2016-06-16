@@ -4,9 +4,37 @@
         <servlet-name>index</servlet-name>
         <servlet-class>ebooksstoreservlets.index</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>insertebook</servlet-name>
+        <servlet-class>ebooksstoreservlets.insertebook</servlet-class>
+        <init-param>
+            <param-name>isbn</param-name>
+            <param-value>"default isbn"</param-value>
+        </init-param>
+        <init-param>
+            <param-name>title</param-name>
+            <param-value>"default title"</param-value>
+        </init-param>
+        <init-param>
+            <param-name>authors</param-name>
+            <param-value>"default authors"</param-value>
+        </init-param>
+        <init-param>
+            <param-name>devices</param-name>
+            <param-value>"default devices"</param-value>
+        </init-param>
+        <init-param>
+            <param-name>price</param-name>
+            <param-value>0.0</param-value>
+        </init-param>
+    </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>insertebook</servlet-name>
+        <url-pattern>/insertebook</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

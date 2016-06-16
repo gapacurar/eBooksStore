@@ -22,6 +22,13 @@ h3 {
     border-style: solid;
     border-color: #296d7d;
 }
+th {
+    font-size: 12px;
+    font-style: italic;
+    border-style: solid;
+    border-color: #296d7d;
+    font-weight: bold;
+}
 .tablewithoutborder{
     font-size: 12px;
 }
