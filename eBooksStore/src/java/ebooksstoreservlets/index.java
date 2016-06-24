@@ -41,8 +41,7 @@ public class index extends HttpServlet {
             } else if (request.getParameter("mainpage_displayebooks") != null){
                 request.getRequestDispatcher("./DisplayAllEbooks.jsp").forward(request, response);
             } else if(request.getParameter("mainpage_exit") != null){
-                this.destroy();
-                System.exit(0);
+                request.getRequestDispatcher("./exit.jsp").forward(request, response);
             } 
     }
 
