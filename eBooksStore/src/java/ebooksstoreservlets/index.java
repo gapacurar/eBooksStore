@@ -4,7 +4,6 @@
 package ebooksstoreservlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,35 +26,12 @@ public class index extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        
-        try (PrintWriter out = response.getWriter()) {
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Electronic Books Store</title>");   
-            out.println("<meta charset=\"UTF-8\">");   
-            out.println("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"); 
-            out.println("<link rel=\"stylesheet\" type=\"text/css\" href= \"eBooksStore.css\">");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h3> eBooks Store</h3>");
-            out.println("<br>");
-            out.println("<form action=\""+request.getContextPath()+"/index\" method=\"post\">");
-            out.println("<table class=\"tablewithborder\">");
-            out.println("<tr><td class=\"tdc\"><input type=\"submit\" class=\"citybutton\" name=\"mainpage_newebook\" value=\"Record new eBook\"></td></tr>");
-            out.println("<tr><td class=\"tdc\"><input type=\"submit\" class=\"citybutton\" name=\"mainpage_updateebook\" value=\"Update an eBook\"></td></tr>");
-            out.println("<tr><td class=\"tdc\"><input type=\"submit\" class=\"citybutton\" name=\"mainpagedeleteebook\" value=\"Delete an eBook\"></td></tr>");
-            out.println("<tr><td class=\"tdc\"><input type=\"submit\" class=\"citybutton\" name=\"mainpage_displayebooks\" value=\"Display all eBooks\" size=\"30\"></td></tr>");
-            out.println("<tr><td class=\"tdc\"><input type=\"submit\" class=\"citybutton\" name=\"mainpage_exit\" value=\" Exit from eBooks\" size=\"40\"></td></tr>");
-            out.println("</table>");
-            out.println("<br>");
-            out.println("</form>");
-            out.println("</body>");
-            out.println("</html>");
             
+            response.setContentType("text/html;charset=UTF-8");
+         
+            // implement recommended architecture request->servlet->response-->JSP
+            request.getRequestDispatcher("./index.jsp").forward(request, response);
             // this code is used to analyse push of buttons in index servlet
-
             if (request.getParameter("mainpage_newebook") != null) {
                 request.getRequestDispatcher("./RecordNewEBook.jsp").forward(request, response);
             } else if (request.getParameter("mainpage_updateebook") != null) {
@@ -64,11 +40,10 @@ public class index extends HttpServlet {
                 request.getRequestDispatcher("./DeleteEBook.jsp").forward(request, response);                        
             } else if (request.getParameter("mainpage_displayebooks") != null){
                 request.getRequestDispatcher("./DisplayAllEbooks.jsp").forward(request, response);
-            } else if(request.getParameter("mainpage_displayebooks") != null){
+            } else if(request.getParameter("mainpage_exit") != null){
                 this.destroy();
+                System.exit(0);
             } 
-
-        }//try
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -14,6 +14,11 @@ import java.sql.SQLException;
 /**
  *
  * @author gheorgheaurelpacurar
+ * This is a Java Bean working in association with a JSP page - DeleteBook.jsp
+ * Bean is used to search a row in DB based on specified ISBN and keep values
+ * retrieved in beans fields. This bean will be visible for session and will offer
+ * values stored in its fields to DeleteBook.jsp to complete its delete sql query.
+ * All these are happen on call of setter of ISBN field.
  */
 public class eBookBean implements Serializable {
     

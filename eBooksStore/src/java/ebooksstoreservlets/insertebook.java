@@ -21,6 +21,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  *
  * @author gheorgheaurelpacurar
+ * This class is a pure servlet used for insertion of a new eBook in the DB. This
+ * servlet is used for processing the request and also for display the response.
  */
 public class insertebook extends HttpServlet {
 

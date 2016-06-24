@@ -1,6 +1,9 @@
 <%-- 
     Document   : UpdateEBook
     Author     : gheorgheaurelpacurar
+    Description: This is an example of calling a user defined tags library from
+                 a JSP. Class behind user defined library is ebookupdate java 
+                 class.
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
