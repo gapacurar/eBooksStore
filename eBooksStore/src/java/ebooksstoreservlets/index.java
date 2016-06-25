@@ -81,7 +81,7 @@ public class index extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "This is index servlet of eBookStore application";
+        return "This is index servlet of eBookStore application and works with index.JSP";
     }// </editor-fold>
 
 }
