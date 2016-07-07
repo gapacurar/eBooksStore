@@ -14,7 +14,7 @@
     <body>
         <h3> eBooks Store</h3>  
         <br>
-        <!-- usage of a servlet, i9n our case index, to process pushing of buttons 
+        <!-- usage of a servlet, in our case index, to process pushing of buttons -->
         <form action="${pageContext.request.contextPath}/index" method="post">
             <table class="tablewithborder">
                 <tr><td class="tdc"><input type="submit" class="citybutton" name="mainpage_newebook" value="Record new eBook"></td></tr>
@@ -25,10 +25,10 @@
             </table>
             <br>
         </form>
-        -->
+        
         <!-- usage calls from a JSP to another JSP page to process push of buttons -->
-        <table class="tablewithborder">
-            
+        <!--
+        <table class="tablewithborder"> 
             <tr><td class="tdc">
                     <form action="RecordNewEBook.jsp" method="post">    
                         <input type="submit" class="citybutton" name="mainpage_newebook" value="Record new eBook">
@@ -55,7 +55,7 @@
                 </form>
                 </td></tr>
         </table>
-        
+        -->
         <br>           
     </body>
 </html>

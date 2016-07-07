@@ -30,7 +30,6 @@ public class index extends HttpServlet {
             response.setContentType("text/html;charset=UTF-8");
          
             // implement recommended architecture request->servlet->response-->JSP
-            request.getRequestDispatcher("./index.jsp").forward(request, response);
             // this code is used to analyse push of buttons in index servlet
             if (request.getParameter("mainpage_newebook") != null) {
                 request.getRequestDispatcher("./RecordNewEBook.jsp").forward(request, response);
@@ -43,6 +42,8 @@ public class index extends HttpServlet {
             } else if(request.getParameter("mainpage_exit") != null){
                 request.getRequestDispatcher("./exit.jsp").forward(request, response);
             } 
+            // if no button was pushed we delegate to the JSP the response work
+            request.getRequestDispatcher("./index.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
