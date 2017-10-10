@@ -87,7 +87,7 @@ public class eBookBean implements Serializable {
                     {
                         resultSet.close();
                     }
-                    catch (Exception ex){}
+                    catch (SQLException ex){}
                 }
                 if (statement != null)
                 {
@@ -95,7 +95,7 @@ public class eBookBean implements Serializable {
                     {
                         statement.close();
                     }
-                    catch (Exception ex){}
+                    catch (SQLException ex){}
                 }	
                 if (connection != null)
                 {
@@ -103,7 +103,7 @@ public class eBookBean implements Serializable {
                     {
                         connection.close();
                     }
-                    catch (Exception ex){}
+                    catch (SQLException ex){}
                 }
             }
         propertySupport.firePropertyChange(PROP_ISBN, oldValue, isbn);
@@ -274,7 +274,7 @@ public class eBookBean implements Serializable {
                 Class driverClass = Class.forName(driver);
                 connection = DriverManager.getConnection(url, user, password);
                 statement = connection.createStatement();
-                //call stored procedure to select the eBooks with given ISBN
+                //call prepared statement to delete the eBooks with given ISBN
                 String DML = "DELETE FROM EBOOKS WHERE ISBN = ?";
                 PreparedStatement pstmnt = connection.prepareStatement(DML);
                 pstmnt.setString(1, getIsbn());
@@ -284,11 +284,11 @@ public class eBookBean implements Serializable {
                         this.setValidbean(true);
                         this.setDelete(true);
                 }
-            else
-            {
-                this.setValidbean(false);
-                this.setDelete(false);
-            }
+                else
+                {
+                    this.setValidbean(false);
+                    this.setDelete(false);
+                }
             }
             catch (ClassNotFoundException | SQLException ex)
             {
@@ -302,7 +302,7 @@ public class eBookBean implements Serializable {
                     {
                         resultSet.close();
                     }
-                    catch (Exception ex){}
+                    catch (SQLException ex){}
                 }
                 if (statement != null)
                 {
@@ -310,7 +310,7 @@ public class eBookBean implements Serializable {
                     {
                         statement.close();
                     }
-                    catch (Exception ex){}
+                    catch (SQLException ex){}
                 }	
                 if (connection != null)
                 {
@@ -318,7 +318,7 @@ public class eBookBean implements Serializable {
                     {
                         connection.close();
                     }
-                    catch (Exception ex){}
+                    catch (SQLException ex){}
                 }
             }
         }

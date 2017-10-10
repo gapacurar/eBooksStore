@@ -81,7 +81,7 @@ public class ebookupdate extends SimpleTagSupport {
                     {
                         resultSet.close();
                     }
-                    catch (Exception ex){}
+                    catch (SQLException ex){}
                 }
                 if (statement != null)
                 {
@@ -89,7 +89,7 @@ public class ebookupdate extends SimpleTagSupport {
                     {
                         statement.close();
                     }
-                    catch (Exception ex){}
+                    catch (SQLException ex){}
                 }	
                 if (connection != null)
                 {
@@ -97,7 +97,7 @@ public class ebookupdate extends SimpleTagSupport {
                     {
                         connection.close();
                     }
-                    catch (Exception ex){}
+                    catch (SQLException ex){}
                 }
             }
             // TODO: insert code to write html before writing the body content.
